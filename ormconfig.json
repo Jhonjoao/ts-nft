@@ -1,0 +1,58 @@
+[
+   {
+      "name": "default",
+      "type": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "username": "root",
+      "password": "root",
+      "database": "ts-nft_db",
+      "synchronize": true,
+      "entities": [
+         "./src/models/*.ts"
+      ],
+      "migrations": [
+         "./src/database/migrations/*.ts"
+      ],
+      "cli": {
+         "entitiesDir": "./src/models",
+         "migrationsDir": "./src/database/migrations"
+      }
+   },
+   {
+      "name": "compiled",
+      "type": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "username": "root",
+      "password": "root",
+      "database": "ts-nft_db",
+      "synchronize": true,
+      "entities": [
+         "./dist/models/*.js"
+      ],
+      "migrations": [
+         "./dist/database/migrations/*.js"
+      ],
+      "cli": {
+         "entitiesDir": "./dist/models",
+         "migrationsDir": "./dist/database/migrations"
+      }
+   },
+   {
+      "name": "test",
+      "type": "sqlite",
+      "database": "./data/line.sqlite",
+      "synchronize": true,
+      "entities": [ 
+         "./src/models/*.ts"
+      ],
+      "migrations": [
+         "./src/database/migrations/*.ts"
+      ],
+      "cli": {
+         "entitiesDir": "./src/models",
+         "migrationsDir": "./src/database/migrations"
+      }
+   }
+]

@@ -1,0 +1,43 @@
+{
+  "name": "ts-nft",
+  "version": "1.0.0",
+  "description": "test, api create and list NFTs and assets",
+  "main": "index.js",
+  "author": "jhonjoao",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "cross-env NODE_ENV=compiled node dist/index.js",
+    "dev:server": "ts-node-dev --respawn --transpile-only src",
+    "db:dev": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
+    "db:dev-rollback": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert",
+    "db:test": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -c test",
+    "db:test-rollback": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert: -c test",
+    "test:dev": "cross-env NODE_ENV=test jest --no-cache --watchAll --detectOpenHandles",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "test": "cross-env NODE_ENV=test jest",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "dependencies": {
+    "@pinata/sdk": "^1.1.23",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.3",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.37"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.2",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^16.10.2",
+    "jest": "^27.2.4",
+    "sqlite3": "^5.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
+  }
+}

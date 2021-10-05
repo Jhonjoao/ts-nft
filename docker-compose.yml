@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  postgress:
+    container_name: pg-container
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ts-nft_db 
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  pg_data:
