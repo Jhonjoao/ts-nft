@@ -2,7 +2,10 @@
 .vscode/
 node_modules/
 dist/
-tmp/*
+
+tmp/uploads/*
+!tmp/uploads/.gitkeep
+
 coverage/
 data/
 .env
