@@ -39,3 +39,10 @@ Para rodar o projeto compilado pronto para produção deixei configurado o mesmo
 yarn build
 yarn start
 ```
+
+## Rotas para realizar as requisições 
+GET '/asset' => lista os assets cadastrados.
+POST '/asset' => cadastra um novo asset ( enviar: name, description, image )
+
+GET '/nft' => lista as nfts cadastradas.
+POST '/nft' => registra um novo nft ( enviar: asset, quantity )
